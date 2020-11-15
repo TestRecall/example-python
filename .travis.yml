@@ -3,9 +3,16 @@ python:
   - "3.6"
 
 script:
-  - set -o pipefail
   - pip install -r requirements.txt
-  - curl -o tr-reporter https://downloads.testrecall.com/r/latest/reporter.linux-amd64
-  - chmod +x tr-reporter
 
-  - python3 -m xmlrunner discover -t . --output-file report.xml | ./tr-reporter -file report.xml
+  - pytest --junit-xml=report.xml
+
+before_script:
+  - curl -o reporter https://get.testrecall.com/r/latest/reporter.linux-amd64
+  - chmod +x reporter
+
+after_success:
+  - ./reporter
+
+after_failure:
+  - ./reporter
