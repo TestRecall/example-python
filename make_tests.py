@@ -69,7 +69,7 @@ def make_test_dir(path, current_level, target_level, width):
 cwd = os.getcwd()
 base = cwd + "/test"
 
-target_level = 2
+target_level = 1
 width = 9
 
 make_test_dir(base, 0, target_level, width)
