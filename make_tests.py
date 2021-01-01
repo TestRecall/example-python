@@ -6,7 +6,7 @@ def make_test_files(path, current_level, target_level, width, i):
     try:
         os.mkdir(path)
     except OSError:
-        print("ir already exists")
+        print("dir already exists")
     else:
         print("Successfully created the directory %s " % path)
 
@@ -19,7 +19,7 @@ def make_test_files(path, current_level, target_level, width, i):
 
 class TestCircle(unittest.TestCase):
     def test_sum(self):
-        self.assertEqual(5, 2 + 2)
+        self.assertEqual(4, 2 + 2)
 
     def test_sum_again(self):
         self.assertEqual(4, 2 + 2)

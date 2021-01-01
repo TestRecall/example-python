@@ -3,16 +3,7 @@ python:
   - "3.6"
 
 script:
-  - pip install -r requirements.txt
-
-  - pytest --junit-xml=report.xml
+  - ./test.sh
 
 before_script:
-  - curl -o reporter https://get.testrecall.com/r/latest/reporter.linux-amd64
-  - chmod +x reporter
-
-after_success:
-  - ./reporter
-
-after_failure:
-  - ./reporter
+  - ./setup.sh
